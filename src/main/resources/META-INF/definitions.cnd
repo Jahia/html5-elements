@@ -1,0 +1,31 @@
+<html5mix = 'http://www.jahia.org/html5/mix/1.0'>
+<html5nt = 'http://www.jahia.org/html5/nt/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+
+[html5mix:component] > jmix:droppableContent, jmix:editorialContent mixin
+
+[html5mix:element] mixin
+ + * (jmix:droppableContent) = jmix:droppableContent
+
+[html5mix:elementCustom] mixin
+ extends = html5mix:element
+ itemtype = content
+ - elementId (string) indexed=no < '[a-zA-Z0-9-_]+'
+ - elementCssClass (string) indexed=no
+ - elementStyle (string) indexed=no
+ - elementRole (string) indexed=no
+ - elementAria (string) indexed=no
+ - listLimit (string, choicelist[resourceBundle]) = '-1' autocreated indexed=no < '-1', '1', '2', '3', '4', '5', '10'
+
+[html5nt:article] > jnt:content, html5mix:component, html5mix:element
+[html5nt:aside] > jnt:content, html5mix:component, html5mix:element
+[html5nt:div] > jnt:content, html5mix:component, html5mix:element
+[html5nt:figcaption] > jnt:content, html5mix:component, html5mix:element
+[html5nt:figure] > jnt:content, html5mix:component, html5mix:element
+[html5nt:header] > jnt:content, html5mix:component, html5mix:element
+[html5nt:hgroup] > jnt:content, html5mix:component, html5mix:element
+[html5nt:main] > jnt:content, html5mix:component, html5mix:element
+[html5nt:nav] > jnt:content, html5mix:component, html5mix:element
+[html5nt:section] > jnt:content, html5mix:component, html5mix:element
+

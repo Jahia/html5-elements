@@ -30,3 +30,20 @@
 [html5nt:nav] > jnt:content, html5mix:component, html5mix:element
 [html5nt:section] > jnt:content, html5mix:component, html5mix:element
 
+[html5mix:elementData] mixin
+ extends = html5mix:element
+ itemtype = options
+ - dataName (string) indexed=no < '[a-zA-Z0-9-_]+'
+ - dataValue (string) indexed=no
+
+[html5mix:elementData2] mixin
+ extends = html5mix:element
+ itemtype = options
+ - dataName2 (string) indexed=no < '[a-zA-Z0-9-_]+'
+ - dataValue2 (string) indexed=no
+
+[html5mix:elementData3] mixin
+ extends = html5mix:element
+ itemtype = options
+ - dataName3 (string) indexed=no < '[a-zA-Z0-9-_]+'
+ - dataValue3 (string) indexed=no

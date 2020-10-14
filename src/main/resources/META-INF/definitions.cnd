@@ -23,6 +23,7 @@
 [html5nt:div] > jnt:content, html5mix:component, html5mix:element
 [html5nt:figcaption] > jnt:content, html5mix:component, html5mix:element
 [html5nt:figure] > jnt:content, html5mix:component, html5mix:element
+[html5nt:footer] > jnt:content, html5mix:component, html5mix:element
 [html5nt:header] > jnt:content, html5mix:component, html5mix:element
 [html5nt:hgroup] > jnt:content, html5mix:component, html5mix:element
 [html5nt:main] > jnt:content, html5mix:component, html5mix:element

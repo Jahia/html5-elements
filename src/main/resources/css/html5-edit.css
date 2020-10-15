@@ -1,17 +1,19 @@
 .html5edit {
     position: relative;
     min-height: 2.2em;
-    padding-bottom: 1em;
+    padding-top:1.5em;
 }
 
 .html5edit > .editbutton {
     position: absolute;
-    bottom: 1em;
+    top: 0.2em;
     right: 1em;
     height: 1.2em;
-    width: 5em;
+    width: 100%;
     opacity: .2;
     text-align: right;
+    font-size: smaller;
+    text-wrap: none;
 }
 
 .html5edit > .editbutton:hover  {

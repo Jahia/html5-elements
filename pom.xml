@@ -44,7 +44,7 @@
         please contact the sales department at sales@jahia.com.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>jahia-modules</artifactId>
@@ -54,7 +54,7 @@
     <groupId>org.jahiacommunity.modules</groupId>
     <artifactId>html5-elements</artifactId>
     <name>HTML5 Elements</name>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <description>This module allows to add HTML 5 Elements in a page.</description>
 
@@ -62,7 +62,7 @@
         <connection>scm:git:git@github.com:Jahia/html5-elements.git</connection>
         <developerConnection>scm:git:git@github.com:Jahia/html5-elements.git</developerConnection>
         <url>https://github.com/Jahia/html5-elements.git</url>
-      <tag>html5-elements-1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <repositories>

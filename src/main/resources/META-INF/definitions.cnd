@@ -19,6 +19,7 @@
  - listLimit (string, choicelist[resourceBundle]) = '-1' autocreated indexed=no < '-1', '1', '2', '3', '4', '5', '10'
 
 [html5nt:article] > jnt:content, html5mix:component, html5mix:element
+[html5nt:address] > jnt:content, html5mix:component, html5mix:element
 [html5nt:aside] > jnt:content, html5mix:component, html5mix:element
 [html5nt:div] > jnt:content, html5mix:component, html5mix:element
 [html5nt:figcaption] > jnt:content, html5mix:component, html5mix:element

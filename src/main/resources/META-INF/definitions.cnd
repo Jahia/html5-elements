@@ -3,7 +3,7 @@
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 
-[html5mix:component] > jmix:droppableContent, jmix:editorialContent mixin
+[html5mix:component] > jmix:droppableContent, jmix:editorialContent, jmix:browsableInEditorialPicker mixin
 
 [html5mix:element] mixin
  + * (jmix:droppableContent) = jmix:droppableContent

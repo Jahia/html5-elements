@@ -48,3 +48,15 @@
  itemtype = options
  - dataName3 (string) indexed=no < '[a-zA-Z0-9-_]+'
  - dataValue3 (string) indexed=no
+
+[html5nt:video] > jnt:content, html5mix:component
+ - autoplay (boolean) = 'false' indexed=no autocreated
+ - controls (boolean) = 'true' indexed=no autocreated
+ - fallbackContent (string, textarea) indexed=no
+ - height (string) indexed=no
+ - loop (boolean) = 'true' indexed=no autocreated
+ - muted (boolean) = 'true' indexed=no autocreated
+ - poster (weakreference, picker[type='image']) indexed=no < jnt:file
+ - preload (string, choicelist[resourceBundle]) = 'auto' autocreated indexed=no < 'auto', 'metadata', 'none'
+ - source (weakreference, picker[type='file',mime='video/*']) mandatory indexed=no < jnt:file
+ - width (string) indexed=no

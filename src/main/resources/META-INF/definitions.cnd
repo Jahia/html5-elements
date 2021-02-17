@@ -58,5 +58,5 @@
  - muted (boolean) = 'true' indexed=no autocreated
  - poster (weakreference, picker[type='image']) indexed=no < jnt:file
  - preload (string, choicelist[resourceBundle]) = 'auto' autocreated indexed=no < 'auto', 'metadata', 'none'
- - source (weakreference, picker[type='file']) mandatory indexed=no < jnt:file
+ - source (weakreference, picker[type='file',mime='video/*']) mandatory indexed=no < jnt:file
  - width (string) indexed=no

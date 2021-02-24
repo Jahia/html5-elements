@@ -25,6 +25,8 @@ Here is the list of HTML 5 Elements you can add:
  * **nav** The `<nav>` tag defines a section with navigation links in the document.
 
  * **section** The `<section>` tag defines a generic section in the document.
+ 
+* **video** The `<video>` tag defines a generic video.
 
 ## Customize
 There is a way to customize all HTML5 Elements tag:

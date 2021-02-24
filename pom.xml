@@ -9,7 +9,7 @@
     <groupId>org.jahiacommunity.modules</groupId>
     <artifactId>html5-elements</artifactId>
     <name>HTML5 Elements</name>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>bundle</packaging>
     <description>This module allows to add HTML 5 Elements in a page.</description>
 
@@ -17,7 +17,7 @@
         <connection>scm:git:git@github.com:Jahia/html5-elements.git</connection>
         <developerConnection>scm:git:git@github.com:Jahia/html5-elements.git</developerConnection>
         <url>https://github.com/Jahia/html5-elements.git</url>
-      <tag>HEAD</tag>
+      <tag>1_0_1</tag>
   </scm>
 
     <repositories>

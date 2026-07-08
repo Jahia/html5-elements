@@ -34,5 +34,5 @@
         test="${not empty height}"><c:out value=" "/>height="${fn:escapeXml(height)}"</c:if><c:if
         test="${not empty width}"><c:out value=" "/>width="${fn:escapeXml(width)}"</c:if>>
   <source src="${sourceUrl}" type="${type}">
-  ${fallbackContent}
+  ${fn:escapeXml(fallbackContent)}
 </video>

@@ -47,7 +47,7 @@
 <${elementType}<c:if test="${not empty elementId}"> id="${elementId}"</c:if><c:if
         test="${not empty elementCssClass}"><c:out value=" "/>class="${fn:escapeXml(elementCssClass)}"</c:if><c:if
         test="${not empty elementRole}"><c:out value=" "/>role="${fn:escapeXml(elementRole)}"</c:if><c:if
-        test="${not empty elementStyle}"><c:out value=" "/>style="${elementStyle}"</c:if><c:if
+        test="${not empty elementStyle}"><c:out value=" "/>style="${fn:escapeXml(elementStyle)}"</c:if><c:if
         test="${not empty elementAria}"><c:out value=" "/>aria-label="${fn:escapeXml(elementAria)}"</c:if><c:if
         test="${not empty elementData}"><c:out value=" "/>${elementData}</c:if><c:if
         test="${not empty elementData2}"><c:out value=" "/>${elementData2}</c:if><c:if

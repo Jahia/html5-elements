@@ -64,7 +64,7 @@
         <%-- Missing or dangling reference: render nothing in live mode, and surface the problem to the
              editor in edit mode rather than failing the whole page fragment. --%>
         <c:if test="${renderContext.editMode}">
-            <div class="html5edit html5-video-missing-source">
+            <div class="html5-video-missing-source">
                 <fmt:message key="html5nt_video.missingSource"/>
             </div>
         </c:if>

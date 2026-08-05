@@ -39,9 +39,7 @@ describe('HTML5 video - rendered markup', () => {
         addFile({
             parentPathOrId: FILES_PATH,
             name: 'basic.mp4',
-            mimeType: 'video/mp4',
-            data: 'not-a-real-video'
-        }).then(file => {
+            mimeType: 'video/mp4'}).then(file => {
             addNode({
                 parentPathOrId: CONTENT_PATH,
                 name: 'video-basic',
@@ -69,9 +67,7 @@ describe('HTML5 video - rendered markup', () => {
         addFile({
             parentPathOrId: FILES_PATH,
             name: 'no-mixin.mp4',
-            mimeType: 'video/mp4',
-            data: 'not-a-real-video'
-        }).then(file => {
+            mimeType: 'video/mp4'}).then(file => {
             addNode({
                 parentPathOrId: CONTENT_PATH,
                 name: 'video-no-mixin',
@@ -93,9 +89,7 @@ describe('HTML5 video - rendered markup', () => {
         addFile({
             parentPathOrId: FILES_PATH,
             name: 'advanced.mp4',
-            mimeType: 'video/mp4',
-            data: 'not-a-real-video'
-        }).then(file => {
+            mimeType: 'video/mp4'}).then(file => {
             addNode({
                 parentPathOrId: CONTENT_PATH,
                 name: 'video-advanced',
@@ -127,7 +121,7 @@ describe('HTML5 video - rendered markup', () => {
                     expect(videoTag).to.contain('preload="metadata"');
                     expect(videoTag).to.contain('height="360"');
                     expect(videoTag).to.contain('width="640"');
-                    // loop was set to false, so the boolean attribute must be absent
+                    // Loop was set to false, so the boolean attribute must be absent
                     expect(videoTag).to.not.contain('loop');
                 });
         });
@@ -138,9 +132,7 @@ describe('HTML5 video - rendered markup', () => {
         addFile({
             parentPathOrId: FILES_PATH,
             name: 'xss-fallback.mp4',
-            mimeType: 'video/mp4',
-            data: 'not-a-real-video'
-        }).then(file => {
+            mimeType: 'video/mp4'}).then(file => {
             addNode({
                 parentPathOrId: CONTENT_PATH,
                 name: 'video-xss-fallback',
@@ -163,9 +155,7 @@ describe('HTML5 video - rendered markup', () => {
         addFile({
             parentPathOrId: FILES_PATH,
             name: 'xss-mime.mp4',
-            mimeType: `video/mp4${BREAKOUT_PAYLOAD}`,
-            data: 'not-a-real-video'
-        }).then(file => {
+            mimeType: `video/mp4${BREAKOUT_PAYLOAD}`}).then(file => {
             addNode({
                 parentPathOrId: CONTENT_PATH,
                 name: 'video-xss-mime',
@@ -186,9 +176,7 @@ describe('HTML5 video - rendered markup', () => {
         addFile({
             parentPathOrId: FILES_PATH,
             name: 'to-delete.mp4',
-            mimeType: 'video/mp4',
-            data: 'not-a-real-video'
-        }).then(file => {
+            mimeType: 'video/mp4'}).then(file => {
             addNode({
                 parentPathOrId: CONTENT_PATH,
                 name: 'video-dangling-source',
@@ -211,15 +199,11 @@ describe('HTML5 video - rendered markup', () => {
         addFile({
             parentPathOrId: FILES_PATH,
             name: 'keep.mp4',
-            mimeType: 'video/mp4',
-            data: 'not-a-real-video'
-        }).then(sourceFile => {
+            mimeType: 'video/mp4'}).then(sourceFile => {
             addFile({
                 parentPathOrId: FILES_PATH,
                 name: 'poster-to-delete.jpg',
-                mimeType: 'image/jpeg',
-                data: 'not-a-real-image'
-            }).then(posterFile => {
+                mimeType: 'image/jpeg'}).then(posterFile => {
                 addNode({
                     parentPathOrId: CONTENT_PATH,
                     name: 'video-dangling-poster',
@@ -247,15 +231,11 @@ describe('HTML5 video - rendered markup', () => {
         addFile({
             parentPathOrId: FILES_PATH,
             name: 'with-poster.mp4',
-            mimeType: 'video/mp4',
-            data: 'not-a-real-video'
-        }).then(sourceFile => {
+            mimeType: 'video/mp4'}).then(sourceFile => {
             addFile({
                 parentPathOrId: FILES_PATH,
                 name: 'poster.jpg',
-                mimeType: 'image/jpeg',
-                data: 'not-a-real-image'
-            }).then(posterFile => {
+                mimeType: 'image/jpeg'}).then(posterFile => {
                 addNode({
                     parentPathOrId: CONTENT_PATH,
                     name: 'video-with-poster',

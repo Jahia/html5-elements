@@ -148,7 +148,7 @@ describe('HTML5 elements - attribute injection', () => {
             primaryNodeType: 'html5nt:aside',
             mixins: ['html5mix:elementCustom'],
             properties: [{name: 'elementId', value: BREAKOUT_PAYLOAD}]
-        }).should((result: {errors?: unknown[]}) => {
+        }).should((result: { errors?: unknown[] }) => {
             expect(result.errors, 'the [a-zA-Z0-9-_]+ constraint must reject the payload').to.not.be.empty;
         });
     });
@@ -164,7 +164,7 @@ describe('HTML5 elements - attribute injection', () => {
                 {name: 'dataName', value: 'evil" onmouseover=alert(1) x'},
                 {name: 'dataValue', value: 'anything'}
             ]
-        }).should((result: {errors?: unknown[]}) => {
+        }).should((result: { errors?: unknown[] }) => {
             expect(result.errors, 'the [a-zA-Z0-9-_]+ constraint must reject the payload').to.not.be.empty;
         });
     });

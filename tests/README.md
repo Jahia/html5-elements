@@ -6,9 +6,18 @@
 asserting is therefore the **rendered markup**, so every spec follows the same shape — create JCR content
 through the standard Jahia GraphQL JCR API, render the node, assert on the HTML.
 
-Nodes are rendered one at a time via `/cms/render/default/en<path>.html` rather than by assembling a page.
-That renders the node with its default view and nothing else, which keeps assertions tight and avoids
-coupling them to a template set's own output. Shared helpers live in `cypress/support/html5.ts`.
+Nodes are rendered one at a time via **`/cms/render/default/en<path>.html.ajax`** rather than by assembling
+a page. Note the `.ajax` suffix — it is load-bearing: Jahia's render servlet only serves a *page* at
+`<path>.html` and returns 404 for a bare content node (an existing Digitall node such as
+`home/landing.html` behaves identically, so this is platform behaviour, not a fixture problem). The `.ajax`
+fragment renderer emits just that node's view, e.g. `<section></section>`, with no page chrome. That is
+what keeps assertions tight: rendering a full Digitall page would drown them in template output — and in
+its own `<img>` tags, which would break the escaping assertions outright.
+
+Shared helpers live in `cypress/support/html5.ts`, and content creation goes through `@jahia/cypress`'
+own JCR helpers (`addNode`, `deleteNode`, `getNodeByPath`, `uploadFile`) rather than hand-written GraphQL,
+so the query shapes stay correct across harness upgrades. `uploadFile` matters in particular: `jcr:data`
+has to be set with an explicit `BINARY` type, which an inline `properties: [...]` list does not do.
 
 | Spec | Covers |
 |------|--------|

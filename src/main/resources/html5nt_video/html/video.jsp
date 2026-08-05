@@ -44,7 +44,10 @@
 
 <c:choose>
     <c:when test="${not empty sourceNode}">
-        <jcr:nodeProperty node="${sourceNode}" name="jcr:mimeType" var="type"/>
+        <%-- jcr:mimeType lives on the file's jcr:content child (jnt:resource), NOT on the jnt:file node.
+             Reading it off the file node yields nothing, which is why <source> used to always render
+             type="". getFileContent() is the JCRNodeWrapper accessor for that child. --%>
+        <c:set var="type" value="${sourceNode.fileContent.contentType}"/>
         <c:url var="sourceUrl" value="${sourceNode.url}" context="/"/>
         <video<c:if test="${autoplay}"><c:out value=" "/>autoplay</c:if><c:if
                 test="${controls}"><c:out value=" "/>controls</c:if><c:if

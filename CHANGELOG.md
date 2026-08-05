@@ -32,8 +32,13 @@ All notable changes to the HTML5 Elements module are documented in this file.
   therefore carry no referential integrity: `mandatory` guards the save, not the read, and resolving a
   dangling reference throws `ItemNotFoundException`. The references are now resolved defensively — live
   mode renders nothing, and edit mode shows the editor which component needs fixing.
+- `<video><source>` now carries the real content type. `video.jsp` read `jcr:mimeType` from the `jnt:file`
+  node, but that property lives on the file's `jcr:content` child (`jnt:resource`), so the attribute always
+  rendered as `type=""`. It is now read via `getFileContent().getContentType()`. This also made the
+  escaping of that value meaningful — previously the value could never reach the sink at all.
 
 ### Added
 - End-to-end test harness under `tests/` (`@jahia/cypress`, Docker-based), covering the rendered markup of
   every `html5nt:*` element, the custom/data attribute mixins, the escaping fixes above, and the `<video>`
-  fallback and dangling-reference behaviour.
+  fallback, mime type and dangling-reference behaviour. 32 tests, all passing against Jahia 8 with the
+  Digitall fixture site.

@@ -17,41 +17,38 @@
 <c:if test="${empty listLimit}">
     <c:set var="listLimit" value="-1"/>
 </c:if>
+<%-- Data attribute names/values are kept as plain values and emitted separately in the start tag
+     below. They are deliberately NOT composed into a pre-built markup string: a composed string has
+     to be written out unescaped, which hides the escaping decision from the sink. --%>
 <c:if test="${jcr:isNodeType(currentNode, 'html5mix:elementData')}">
     <c:set var="dataName" value="${currentNode.properties.dataName.string}"/>
     <c:set var="dataValue" value="${currentNode.properties.dataValue.string}"/>
-    <c:if test="${! empty dataName && ! empty dataValue}">
-        <c:set var="elementData">data-${dataName}="${fn:escapeXml(dataValue)}"</c:set>
-    </c:if>
 </c:if>
 <c:if test="${jcr:isNodeType(currentNode, 'html5mix:elementData2')}">
     <c:set var="dataName2" value="${currentNode.properties.dataName2.string}"/>
     <c:set var="dataValue2" value="${currentNode.properties.dataValue2.string}"/>
-    <c:if test="${! empty dataName2 && ! empty dataValue2}">
-        <c:set var="elementData2">data-${dataName2}="${fn:escapeXml(dataValue2)}"</c:set>
-    </c:if>
-
 </c:if>
 <c:if test="${jcr:isNodeType(currentNode, 'html5mix:elementData3')}">
     <c:set var="dataName3" value="${currentNode.properties.dataName3.string}"/>
     <c:set var="dataValue3" value="${currentNode.properties.dataValue3.string}"/>
-    <c:if test="${! empty dataName3 && ! empty dataValue3}">
-        <c:set var="elementData3">data-${dataName3}="${fn:escapeXml(dataValue3)}"</c:set>
-    </c:if>
 </c:if>
 
 <c:if test="${renderContext.editMode}">
     <c:set var="elementCssClass" value="${elementCssClass} html5edit"/>
 </c:if>
 <c:set var="elementType" value="${fn:replace(currentNode.primaryNodeType,'html5nt:','')}"/>
-<${elementType}<c:if test="${not empty elementId}"> id="${elementId}"</c:if><c:if
+<%-- Every value interpolated into an attribute below goes through fn:escapeXml. The data-* attribute
+     NAMES additionally rely on the '[a-zA-Z0-9-_]+' value constraint declared in definitions.cnd to
+     exclude whitespace (escapeXml does not): if that constraint is ever relaxed, an attribute name
+     could inject a further attribute here. Keep the constraint and the escaping together. --%>
+<${elementType}<c:if test="${not empty elementId}"> id="${fn:escapeXml(elementId)}"</c:if><c:if
         test="${not empty elementCssClass}"><c:out value=" "/>class="${fn:escapeXml(elementCssClass)}"</c:if><c:if
         test="${not empty elementRole}"><c:out value=" "/>role="${fn:escapeXml(elementRole)}"</c:if><c:if
         test="${not empty elementStyle}"><c:out value=" "/>style="${fn:escapeXml(elementStyle)}"</c:if><c:if
         test="${not empty elementAria}"><c:out value=" "/>aria-label="${fn:escapeXml(elementAria)}"</c:if><c:if
-        test="${not empty elementData}"><c:out value=" "/>${elementData}</c:if><c:if
-        test="${not empty elementData2}"><c:out value=" "/>${elementData2}</c:if><c:if
-        test="${not empty elementData3}"><c:out value=" "/>${elementData3}</c:if>>
+        test="${not empty dataName and not empty dataValue}"><c:out value=" "/>data-${fn:escapeXml(dataName)}="${fn:escapeXml(dataValue)}"</c:if><c:if
+        test="${not empty dataName2 and not empty dataValue2}"><c:out value=" "/>data-${fn:escapeXml(dataName2)}="${fn:escapeXml(dataValue2)}"</c:if><c:if
+        test="${not empty dataName3 and not empty dataValue3}"><c:out value=" "/>data-${fn:escapeXml(dataName3)}="${fn:escapeXml(dataValue3)}"</c:if>>
     <template:area path="${elementType}" areaAsSubNode="true" listLimit="${listLimit}"/>
     <c:if test="${renderContext.editMode}">
         <div class="editbutton">

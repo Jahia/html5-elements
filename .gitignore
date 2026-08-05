@@ -1,3 +1,6 @@
 /.idea/
 /target/
 /html5-elements.iml
+
+# Local CodeGraph index
+/.codegraph/

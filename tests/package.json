@@ -17,7 +17,7 @@
     "babel-plugin-istanbul": "^6.1.1",
     "compare-versions": "^6.1.1",
     "cross-fetch": "3.1.6",
-    "cypress": "15.13.1",
+    "cypress": "15.21.1",
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
     "cypress-mailpit": "^1.4.0",
@@ -82,12 +82,8 @@
     "tar": "^7.5.21",
     "test-exclude": "^8.0.0",
     "test-exclude/glob": "^14.0.3",
-    "**/test-exclude/glob": "^14.0.3",
     "test-exclude/minimatch": "^11.0.1",
-    "**/test-exclude/minimatch": "^11.0.1",
     "nyc/glob": "^14.0.3",
-    "**/nyc/glob": "^14.0.3",
-    "cacache/glob": "^14.0.3",
-    "**/cacache/glob": "^14.0.3"
+    "cacache/glob": "^14.0.3"
   }
 }
